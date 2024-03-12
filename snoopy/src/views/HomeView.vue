@@ -10,6 +10,8 @@ import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, Li
 
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
+const URL = 'https://data.cityofnewyork.us/resource/7z8d-msnt.json'
+
 export default {
   name: 'BarChart',
   components: { Bar },
@@ -21,9 +23,8 @@ export default {
     this.loaded = false
 
     try {
-      const { userlist } = await fetch('https://data.cityofnewyork.us/resource/7z8d-msnt.json')
-      this.chartdata = userlist
-
+      const userlist = await fetch(URL).ytd_attendance_avg_
+      this.chartData = userlist
       this.loaded = true
     } catch (e) {
       console.error(e)
