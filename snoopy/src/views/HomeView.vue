@@ -23,7 +23,7 @@ export default {
     this.loaded = false
 
     try {
-      const userlist = await fetch(URL).ytd_attendance_avg_
+      const userlist = await fetch(URL)
       this.chartData = userlist
       this.loaded = true
     } catch (e) {
