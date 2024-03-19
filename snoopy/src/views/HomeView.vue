@@ -1,34 +1,27 @@
 <template>
   <div class="container">
-    <Bar v-if="loaded" :data="chartData" />
+    <Doughnut v-if="loaded" :data="data" />
   </div>
 </template>
 
 <script>
-import { Bar } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+import { Doughnut } from 'vue-chartjs'
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 
-ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
-
+ChartJS.register(ArcElement, Tooltip, Legend)
+let loaded = false
 const URL = 'https://data.cityofnewyork.us/resource/7z8d-msnt.json'
+let response = await fetch(URL)
+const data = await response.json()
 
 export default {
-  name: 'BarChart',
-  components: { Bar },
-  data: () => ({
-    loaded: false,
-    chartData: null
-  }),
-  async mounted () {
-    this.loaded = false
-
-    try {
-      const userlist = await fetch(URL)
-      this.chartData = userlist
-      this.loaded = true
-    } catch (e) {
-      console.error(e)
-    }
+  name: 'App',
+  components: {
+    Doughnut
+  },
+  data() {
+    loaded = true
   }
 }
+
 </script>
