@@ -1,4 +1,5 @@
 <template>
+  <h1>Doughnut Graph</h1>
   <div class="container">
     <Doughnut v-if="loaded" :data="data" />
   </div>
@@ -23,5 +24,4 @@ export default {
     loaded = true
   }
 }
-
 </script>
