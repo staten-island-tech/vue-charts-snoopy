@@ -35,7 +35,11 @@ export default {
   data() {
     return {
       loaded: false,
-      chartData: null
+      chartData: {
+        datasets: [{
+          data: chartData
+        }]
+      }
     }
   },
   async mounted() {
