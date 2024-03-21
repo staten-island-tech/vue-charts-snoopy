@@ -1,7 +1,7 @@
 <template>
 <h1>Bar Graph</h1>
   <div class="container">
-    <Bar v-if="loaded" :data="chartData" />
+    <Bar v-if="loaded" :data="chartData" :options="chartOptions" />
   </div>
 </template>
 
@@ -14,10 +14,28 @@ ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 export default {
   name: 'BarChart',
   components: { Bar },
-  data: () => ({
-    loaded: false,
-    chartData: null
-  }),
+  props: {
+    chartOptions: {
+        type: Object,
+        required: true,
+        default: () => ({
+            responsive: true
+        })
+    }
+  },
+  chartData: {
+    type: Object,
+    required: true,
+  },
+  data () {
+    return {
+        loaded: false,
+        chartData: {
+            labels: ['Attendance'],
+            datasets: [{label: 'district', data: [90] }],
+        }
+    }
+  },
   async mounted () {
     this.loaded = false
 
@@ -29,6 +47,7 @@ export default {
     } catch (e) {
       console.error(e)
     }
+    console.log(this.chartData)
   }
 }
 </script>
