@@ -1,7 +1,10 @@
 <template>
   <h1>Doughnut Graph</h1>
-  <div class="container">
-    <Doughnut v-if="loaded" :data="data" />
+  <div>
+    <Doughnut id="doughnut" 
+              v-if="loaded" 
+              :data=chartData 
+              :options=chartOptions />
   </div>
 </template>
 
@@ -10,18 +13,40 @@ import { Doughnut } from 'vue-chartjs'
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js'
 
 ChartJS.register(ArcElement, Tooltip, Legend)
-let loaded = false
+
 const URL = 'https://data.cityofnewyork.us/resource/7z8d-msnt.json'
-let response = await fetch(URL)
-const data = await response.json()
 
 export default {
-  name: 'App',
-  components: {
-    Doughnut
+  name: 'Doughnut',
+  components: { Doughnut },
+  props: {
+    chartOptions: {
+      type: Object,
+      required: true,
+      default: () => ({
+        responsive: true
+      })
+    },
+    chartData: {
+      type: Object,
+      required: true
+    }
   },
   data() {
-    loaded = true
+    return {
+      loaded: false,
+      chartData: null
+    }
+  },
+  async mounted() {
+  try {
+    let response = await fetch(URL)
+    chartData = await response.json()
+    console.log(data)
+    this.loaded = true
+  } catch (e) {
+    console.error(e)
   }
+}
 }
 </script>
