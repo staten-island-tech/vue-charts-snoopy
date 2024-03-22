@@ -21,24 +21,27 @@ export default {
         default: () => ({
             responsive: true
         })
-    }
-  },
-  chartData: {
+    },
+    chartData: {
     type: Object,
     required: true,
-  },
-  data () {
+    },
+},
+data () {
     return {
         loaded: false,
         chartData: {
-            labels: ['Attendance'],
-            datasets: [{label: 'district', data: [90] }],
-        }
+            labels: ['1', '2', '3'],
+            datasets: [{label: 'Attendance Average', data: [100] }],
+        },
+        chartOptions: {
+            responsive: true,
+            maintainAspectRatio: true,
+            backgroundColor: ['blue', 'red']
+        } 
     }
-  },
-  async mounted () {
-    this.loaded = false
-
+},
+async mounted () {
     try {
       const { userlist } = await fetch('https://data.cityofnewyork.us/resource/7z8d-msnt.json')
       this.chartdata = userlist
