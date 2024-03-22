@@ -9,9 +9,9 @@ import { RouterLink, RouterView } from 'vue-router'
 
     <div class="wrapper">
       <nav>
-        <RouterLink to="/">Doughnut</RouterLink>
-        <RouterLink to="/card">Card</RouterLink>
-        <RouterLink to="/bar">Bar</RouterLink>
+        <RouterLink to="/">Doughnut Graph</RouterLink>
+        <RouterLink to="/card">Data</RouterLink>
+        <RouterLink to="/bar">Bar Graph</RouterLink>
       </nav>
     </div>
   </header>
