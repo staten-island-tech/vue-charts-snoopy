@@ -32,12 +32,12 @@ data () {
         loaded: false,
         chartData: {
             labels: ['1', '2', '3'],
-            datasets: [{label: 'Attendance Average', data: [100] }],
+            datasets: [{label: ['D1', 'D2'], data: [100, 90, 50] }],
         },
         chartOptions: {
             responsive: true,
             maintainAspectRatio: true,
-            backgroundColor: ['blue', 'red']
+            backgroundColor: ['rgb(111,123,266)', 'rgb(80,50, 230','rgb(40,60, 200']
         } 
     }
 },
