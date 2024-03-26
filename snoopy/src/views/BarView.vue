@@ -1,5 +1,5 @@
 <template>
-<h1>Bar Graph - Attendance Average </h1>
+<h1>Attendance Average (%) of Districts 1 to 35 in New York City</h1>
   <div class="container">
     <Bar v-if="loaded" :data="chartData" :options="chartOptions" />
   </div>
@@ -32,7 +32,7 @@ data () {
         loaded: false,
         chartData: {
             labels: ['85-87', '87-89', '89-91', '91-93', '93-95'],
-            datasets: [{label: ['Attendance Average'], data: [] }],
+            datasets: [{label: ['Amount per Interval'], data: [] }],
         },
         chartOptions: {
             responsive: true,
@@ -46,15 +46,15 @@ async mounted() {
       const res = await fetch('https://data.cityofnewyork.us/resource/7z8d-msnt.json')
       let data = await res.json()
 
-      const one = data.filter((district) => district.ytd_attendance_avg_ === '85-87')
+      const one = data.filter((district) => 85 < district.ytd_attendance_avg_ && district.ytd_attendance_avg_ <= 87)
       this.chartData.datasets[0].data.push(one.length)
-      const two = data.filter((district) => district.ytd_attendance_avg_ === '87-89')
+      const two = data.filter((district) => 87 < district.ytd_attendance_avg_ && district.ytd_attendance_avg_ <= 89)
       this.chartData.datasets[0].data.push(two.length)
-      const three = data.filter((district) => district.ytd_attendance_avg_ === '89-91')
+      const three = data.filter((district) => 89 < district.ytd_attendance_avg_ && district.ytd_attendance_avg_ <= 91)
       this.chartData.datasets[0].data.push(three.length)
-      const four = data.filter((district) => district.ytd_attendance_avg_ === '91-93')
+      const four = data.filter((district) => 91 < district.ytd_attendance_avg_ && district.ytd_attendance_avg_ <= 93)
       this.chartData.datasets[0].data.push(four.length)
-      const five = data.filter((district) => district.ytd_attendance_avg_ === '93-95')
+      const five = data.filter((district) => 93 < district.ytd_attendance_avg_ && district.ytd_attendance_avg_ <= 95)
       this.chartData.datasets[0].data.push(five.length)
 
       this.loaded = true
