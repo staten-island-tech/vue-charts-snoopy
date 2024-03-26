@@ -1,5 +1,5 @@
 <template>
-  <h1>Doughnut Graph</h1>
+  <h1>Doughnut Graph - Enrollment Average</h1>
   <div>
     <Doughnut id="doughnut" 
               v-if="loaded" 
