@@ -1,5 +1,5 @@
 <template>
-  <h1>Cards</h1>
+  <h1>New York City Districts 1 to 35 Information</h1>
   <div id="chart"></div>
   <div class="card">
     <DistrictCard 
@@ -52,5 +52,8 @@ onMounted(() => {
 </script>
 
 <style scoped>
-
+h1 {
+  align-items: center;
+  margin-top: 80px;
+}
 </style>
