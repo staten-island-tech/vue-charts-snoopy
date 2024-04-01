@@ -41,8 +41,6 @@ function FilterData(num) {
 </script>
 
 <style scoped>
-h1 {
-  align-items: center;
-  margin-top: 80px;
-}
+
+  
 </style>
