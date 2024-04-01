@@ -70,5 +70,5 @@ async mounted() {
     console.log(this.chartData)
   }
 }
-}
+
 </script>
