@@ -40,7 +40,7 @@ export default {
           'District 11', 'District 12', 'District 13', 'District 14', 'District 15',
           'District 16', 'District 17', 'District 18', 'District 19', 'District 20',
           'District 21', 'District 22', 'District 23', 'District 24', 'District 25',
-          'District 26', 'District 27', 'District 29', 'District 30', 'District 30',
+          'District 26', 'District 27', 'District 28', 'District 29', 'District 30',
           'District 31', 'District 32',
         ],
         datasets: [{ data: [] }]

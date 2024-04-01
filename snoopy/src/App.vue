@@ -9,9 +9,9 @@ import { RouterLink, RouterView } from 'vue-router'
 
     <div class="wrapper">
       <nav>
-        <RouterLink to="/card"> NYC School Districts Information </RouterLink>
-        <RouterLink to="/bar"> Attendance Average </RouterLink>
-        <RouterLink to="/"> Enrollment Average </RouterLink>
+        <RouterLink to="/"> NYC School Districts Information </RouterLink>
+        <RouterLink to="/percent"> Attendance Average </RouterLink>
+        <RouterLink to="/enrollment"> Enrollment Average </RouterLink>
       </nav>
     </div>
   </header>
