@@ -11,10 +11,7 @@
   </select>
   <h1>New York City Districts Information</h1>
   <div class="card">
-    <DistrictCard 
-    v-for="district in data" 
-    :District = "district"
-    />
+    <DistrictCard v-for="district in data":District = "district"/>
   </div>
 </template>
 
@@ -24,23 +21,21 @@ import { ref, onMounted } from 'vue'
 import DistrictCard from '../components/DistrictCard.vue'
 
 const data = ref('')
-const Data = ref('')
 
 async function getDistrict() {
   let res = await fetch('https://data.cityofnewyork.us/resource/7z8d-msnt.json')
-  Data.value = await res.json()
-  data.value = Data
+  data.value = await res.json
 }
 onMounted(() => {
   getDistrict()
 })
 
-console.log(data)
+console.log(data, 'works')
 
-function FilterData(num) {
-  data.value = Data.filter((district) => district===(num-1))
+/* function FilterData(num) {
+  data.value = data.filter((district) => district===(num-1))
 }
-
+ */
 </script>
 
 <style scoped>
