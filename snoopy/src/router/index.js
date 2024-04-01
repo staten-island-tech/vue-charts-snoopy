@@ -7,11 +7,6 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'doughnut',
-      component: DoughnutView
-    },
-    {
-      path: '/card',
       name: 'card',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
@@ -19,7 +14,12 @@ const router = createRouter({
       component: () => import('../views/CardView.vue')
     },
     {
-      path: '/bar',
+      path: '/enrollment',
+      name: 'doughnut',
+      component: DoughnutView
+    },
+    {
+      path: '/percent',
       name: 'bar',
       component:BarView
     }
