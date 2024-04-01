@@ -41,7 +41,7 @@ export default {
           'District 16', 'District 17', 'District 18', 'District 19', 'District 20',
           'District 21', 'District 22', 'District 23', 'District 24', 'District 25',
           'District 26', 'District 27', 'District 29', 'District 30', 'District 30',
-          'District 31', 'District 32', 'District 33', 'District 34', 'District 35',
+          'District 31', 'District 32',
         ],
         datasets: [{ data: [] }]
       },
@@ -57,11 +57,9 @@ async mounted() {
       const res = await fetch('https://data.cityofnewyork.us/resource/7z8d-msnt.json')
       let data = await res.json()
 
-      const a = data.filter((district) => district.district === 'DISTRICT 01')
-      this.chartData.datasets.data.push(a.length)
-      const b = data.filter((district) => district.district === 'DISTRICT 02')
-      this.chartData.datasets.data.push(b.length)
-
+      for (let i=0; i<32; i++) {
+        this.chartData.datasets[0].data.push(data[i].ytd_enrollment_avg_)
+      }
 
       this.loaded = true
     } catch (e) {
@@ -70,4 +68,5 @@ async mounted() {
     console.log(this.chartData)
   }
 }
+
 </script>
