@@ -11,7 +11,9 @@
   </select>
   <h1>New York City Districts Information</h1>
   <div class="card">
-    <DistrictCard v-for="district in data":District = "district"/>
+    <DistrictCard 
+    v-for="district in data"
+    :District = "district"/>
   </div>
 </template>
 
@@ -24,7 +26,7 @@ const data = ref('')
 
 async function getDistrict() {
   let res = await fetch('https://data.cityofnewyork.us/resource/7z8d-msnt.json')
-  data.value = await res.json
+  data.value = await res.json()
 }
 onMounted(() => {
   getDistrict()
@@ -32,10 +34,10 @@ onMounted(() => {
 
 console.log(data, 'works')
 
-/* function FilterData(num) {
+function FilterData(num) {
   data.value = data.filter((district) => district===(num-1))
 }
- */
+
 </script>
 
 <style scoped>
