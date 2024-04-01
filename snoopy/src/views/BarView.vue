@@ -1,5 +1,5 @@
 <template>
-<h1 class="title">Attendance Average (%) of Districts 1 to 35 in New York City</h1>
+<h1>Attendance Average (%) of Districts 1 to 35 in New York City</h1>
   <div class="container">
     <Bar v-if="loaded" :data="chartData" :options="chartOptions" />
   </div>
@@ -32,12 +32,12 @@ data () {
         loaded: false,
         chartData: {
             labels: ['85-87', '87-89', '89-91', '91-93', '93-95'],
-            datasets: [{label: ['Amount per Interval'], data: [] }],
+            datasets: [{label: ['Districts per Interval'], data: [] }],
         },
         chartOptions: {
             responsive: true,
             maintainAspectRatio: true,
-            backgroundColor: ['rgb(100,123,266)', 'rgb(80, 80, 200)','rgb(60, 80, 220)']
+            backgroundColor: ['rgb(100,123,266)', 'rgb(80, 80, 200)','rgb(60, 80, 220)', 'rgb(60, 80, 270)','rgb(50, 80, 180)']
         } 
     }
 },
@@ -69,9 +69,9 @@ async mounted() {
 <style scoped>
 h1 {
   align-items: center;
-  margin-top: 80px;
+  margin-top: 40px;
 }
 .container{
-  margin-top: 80px;
+  margin-top: 40px;
 }
 </style>

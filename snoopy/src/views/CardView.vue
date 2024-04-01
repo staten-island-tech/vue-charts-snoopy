@@ -1,5 +1,6 @@
 <template>
-  <select @change="FilterData($event.target.value)">
+  <h1>New York City School Districts Information</h1>
+  <select class="bar" @change="FilterData($event.target.value)">
     <option value=00>All</option>
     <option value=01>District 1</option>
     <option value=02>District 2</option>
@@ -37,7 +38,6 @@
     <option value=ALT>Alternative High Schools</option>
     <option value=City>Citywide</option>
   </select>
-  <h1>New York City Districts Information</h1>
   <div class="card">
     <DistrictCard 
     v-for="district in data"
@@ -46,7 +46,6 @@
 </template>
 
 <script setup>
-
 import { ref, onMounted } from 'vue'
 import DistrictCard from '../components/DistrictCard.vue'
 
@@ -70,10 +69,15 @@ function FilterData(value) {
     data.value = Data.value.filter(el => el.district.includes(value)) 
   }
 }
-
 </script>
 
 <style scoped>
-
-  
+.bar {
+  align-items: center;
+  margin-bottom: 40px;
+}
+h1 {
+  align-items: center;
+  margin-top: 40px;
+}
 </style>

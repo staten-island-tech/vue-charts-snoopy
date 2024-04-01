@@ -1,5 +1,5 @@
 <template>
-  <h1>Doughnut Graph - Enrollment Average</h1>
+  <h1>Enrollment Average (%) of Districts 1 to 35 in New York City</h1>
   <div>
     <Doughnut id="doughnut" 
               v-if="loaded" 
@@ -40,7 +40,7 @@ export default {
           'District 11', 'District 12', 'District 13', 'District 14', 'District 15',
           'District 16', 'District 17', 'District 18', 'District 19', 'District 20',
           'District 21', 'District 22', 'District 23', 'District 24', 'District 25',
-          'District 26', 'District 27', 'District 29', 'District 30', 'District 30',
+          'District 26', 'District 27', 'District 28', 'District 29', 'District 30',
           'District 31', 'District 32',
         ],
         datasets: [{ data: [] }]
@@ -48,7 +48,7 @@ export default {
       chartOptions: {
         responsive: true,
         maintainAspectRatio: true,
-        backgroundColor: ['#caf0f8', '#ADD8f9']
+        backgroundColor: ['rgb(100,123,266)', 'rgb(80, 80, 200)','rgb(60, 80, 220)','rgb(60, 80, 270)','rgb(50, 80, 180)']      
       }
     }
   },
@@ -68,5 +68,12 @@ async mounted() {
     console.log(this.chartData)
   }
 }
-
 </script>
+
+<style scoped>
+h1 {
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+</style>
